@@ -1,0 +1,32 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+            "folder_exclude_patterns": 
+            [
+                "obj",
+                "bin"
+            ]
+		}
+	],
+    "build_systems":
+    [
+        {
+            "name": "make",
+            "shell_cmd": "make -C $project_path",
+            "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+            "variants":
+            [
+                {
+                    "name": "make run",
+                    "shell_cmd": "make -C $project_path run"
+                },
+                {
+                    "name": "make clean",
+                    "shell_cmd": "make -C $project_path clean"
+                }
+            ]
+        }
+    ]
+}
